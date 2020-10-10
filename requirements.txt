@@ -1,0 +1,4 @@
+jiwer
+nltk
+sacrebleu
+sacremoses
