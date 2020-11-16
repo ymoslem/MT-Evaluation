@@ -16,10 +16,11 @@ refs = []
 
 with open(target_test) as test:
     for line in test: 
-        line = line.strip().split() 
-        line = md.detokenize(line) 
+        line = line.strip().split()
+        line = md.detokenize(line)
+        line = line.lower()    # optional
         refs.append(line)
-    
+
 print("Reference 1st sentence:", refs[0])
 
 refs = [refs]  # Yes, it is a list of list(s) as required by sacreBLEU
@@ -30,11 +31,12 @@ preds = []
 
 with open(target_pred) as pred:  
     for line in pred: 
-        line = line.strip().split() 
-        line = md.detokenize(line) 
+        line = line.strip().split()
+        line = md.detokenize(line)
+        line = line.lower()    # optional
         preds.append(line)
 
-print("MTed 1st sentence:", preds[0])    
+print("MTed 1st sentence:", preds[0])
 
 
 # Calculate and print the BLEU score
