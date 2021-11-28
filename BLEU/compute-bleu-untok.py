@@ -7,8 +7,8 @@ import sys
 import sacrebleu
 
 # Only if you originally used MosesTokenizer
-# from sacremoses import MosesDetokenizer
-# md = MosesDetokenizer(lang='en')
+from sacremoses import MosesDetokenizer
+md = MosesDetokenizer(lang='en')
 
 target_test = sys.argv[1]  # Test file argument
 target_pred = sys.argv[2]  # MTed file argument
@@ -19,7 +19,7 @@ refs = []
 with open(target_test) as test:
     for line in test: 
         line = line.strip().split()
-        #line = md.detokenize(line)
+        line = md.detokenize(line)
         refs.append(line)
 
 print("Reference 1st sentence:", refs[0])
@@ -33,7 +33,7 @@ preds = []
 with open(target_pred) as pred:  
     for line in pred: 
         line = line.strip().split()
-        #line = md.detokenize(line)
+        line = md.detokenize(line)
         preds.append(line)
 
 print("MTed 1st sentence:", preds[0])
