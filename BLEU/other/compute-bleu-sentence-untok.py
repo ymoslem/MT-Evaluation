@@ -1,6 +1,6 @@
 # BLEU for segment by segment with arguments
 # Run this file from CMD/Terminal
-# Example Command: python3 compute-bleu-sentence-args.py test_file_name.txt mt_file_name.txt
+# Example Command: python3 compute-bleu-sentence-untok.py test_file_name.txt mt_file_name.txt
 
 import sys
 import sacrebleu
