@@ -22,12 +22,12 @@ To run the Python scripts and calculate the MT evaluation metrics on your machin
 ### BLEU
 **Corpus BLEU:** Calculates the BLEU score for the whole corpus and prints the result.
 ```
-python3 compute-bleu-args.py Reference.txt System.txt
+python3 compute-bleu.py Reference.txt System.txt
 ```
 
 **Sentence BLEU:** Calculates the BLEU score for sentence by sentence and saves the result to a file.
 ```
-python3 compute-bleu-sentence-args.py Reference.txt System.txt
+python3 compute-bleu-sentence.py Reference.txt System.txt
 ```
 
 ### METEOR
