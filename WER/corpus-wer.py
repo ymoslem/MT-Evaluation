@@ -11,12 +11,9 @@ from jiwer import wer
 target_test = sys.argv[1]	#  Test file argument
 target_pred = sys.argv[2]	#  MTed file argument
 
-
 # Open the test dataset human translation file
 with open(target_test) as test:
     refs = test.readlines()
-
-#print("Reference 1st sentence:", refs[0])
 
 # Open the translation file by the NMT model
 with open(target_pred) as pred:
@@ -25,5 +22,5 @@ with open(target_pred) as pred:
 wer_file = "wer-" + target_pred + ".txt"
 
 # Calculate WER for the whole corpus
-wer_score = wer(refs, preds, standardize=True)    # "standardize" expands abbreviations
+wer_score = wer(refs, preds)
 print("WER Score:", wer_score)
