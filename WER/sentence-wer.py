@@ -11,12 +11,9 @@ from jiwer import wer
 target_test = sys.argv[1]	#  Test file argument
 target_pred = sys.argv[2]	#  MTed file argument
 
-
 # Open the test dataset human translation file
 with open(target_test) as test:
     refs = test.readlines()
-
-#print("Reference 1st sentence:", refs[0])
 
 # Open the translation file by the NMT model
 with open(target_pred) as pred:
@@ -29,10 +26,10 @@ with open(wer_file, "w+") as output:
     for line in zip(refs, preds):
         test = line[0]
         pred = line[1]
-        #print(test, pred)
+        # print(test, pred)
 
-        wer_score = wer(test, pred, standardize=True)  # "standardize" expands abbreviations
-        #print(wer_score, "\n")
+        wer_score = wer(test, pred)
+        # print(wer_score, "\n")
         output.write(str(wer_score) + "\n")
 
 print("Done! Please check the WER file '" + wer_file + "' in the same folder!")
